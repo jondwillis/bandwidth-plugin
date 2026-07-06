@@ -1,0 +1,61 @@
+{
+  "name": "bandwidth",
+  "version": "0.2.0",
+  "description": "Keeps AI delegation a bandwidth multiplier instead of a brain drain. Triage work before handing it off (fully outsource the tedious, keep the craft), gate outgoing workslop before it ships to another human, and retain the ability to supervise what you delegated via teachback + spaced review. Grounded in Bainbridge's ironies of automation (1983) and Carl Hendrick's 'AI brain fry, workslop and the ironies of automation'.",
+  "author": {
+    "name": "Jon Willis"
+  },
+  "homepage": "https://github.com/jondwillis/bandwidth-plugin",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "delegation",
+    "workslop",
+    "retrieval-practice",
+    "spaced-repetition",
+    "ironies-of-automation",
+    "skill-atrophy"
+  ],
+  "userConfig": {
+    "mode": {
+      "type": "string",
+      "title": "Mode",
+      "description": "Default: nudge. Options: off | nudge | gate. off (hooks emit nothing; skills still work when invoked), nudge (SessionStart surfaces due reviews; publish-shaped commands get a one-time additionalContext reminder if nothing was slopchecked this session), gate (like nudge, but an un-slopchecked publish triggers a permission ask instead of a silent nudge).",
+      "default": "nudge"
+    },
+    "review_intervals": {
+      "type": "string",
+      "title": "Spaced-review ladder (days)",
+      "description": "Default: 1,3,7,21. Comma-separated day intervals for the teachback review ladder. A pass moves an item up one rung; a fail resets it to rung 1; passing the last rung retires the item.",
+      "default": "1,3,7,21"
+    },
+    "atrophy_threshold": {
+      "type": "number",
+      "title": "Atrophy threshold",
+      "description": "Default: 5. Range: 2-20. Consecutive full delegations in one area before /bandwidth:pulse flags skill-atrophy risk (Bainbridge's third irony: long smooth automation degrades exactly the expertise needed when it fails).",
+      "default": 5,
+      "min": 2,
+      "max": 20
+    },
+    "channels": {
+      "type": "string",
+      "title": "Delivery channels",
+      "description": "Default: session. Comma-separated: session, notification, notes, slack. session (in-chat only), notification (macOS banner when the queue is actionable at session end), notes (upsert a per-project 'bandwidth — <project>' note in Notes.app with the review-queue snapshot; macOS, first use triggers an Automation consent prompt), slack (skills mirror digests via a connected Slack MCP; requires slack_channel).",
+      "default": "session"
+    },
+    "slack_channel": {
+      "type": "string",
+      "title": "Slack channel",
+      "description": "Default: empty (disabled). Channel name or ID that teachback/review/pulse digests are mirrored to when 'slack' is in channels and a Slack MCP is connected in the session. Delivery is skill-level and best-effort — no Slack, no error.",
+      "default": ""
+    },
+    "monitor_poll_sec": {
+      "type": "number",
+      "title": "Review monitor poll interval (seconds)",
+      "description": "Default: 1800. Range: 300-14400. How often the review-due background monitor re-counts the queue. It only speaks when the due count rises mid-session.",
+      "default": 1800,
+      "min": 300,
+      "max": 14400
+    }
+  }
+}

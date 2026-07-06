@@ -1,0 +1,20 @@
+{
+  "name": "bandwidth",
+  "owner": {
+    "name": "Jon Willis"
+  },
+  "metadata": {
+    "description": "Keeps AI delegation a bandwidth multiplier instead of a brain drain: delegation triage, workslop gating, teachback + spaced review with out-of-band delivery (Notes.app, notifications, Slack), skill-atrophy tracking.",
+    "version": "0.2.0"
+  },
+  "plugins": [
+    {
+      "name": "bandwidth",
+      "source": "./",
+      "description": "Delegation triage (outsource the tedious, keep the craft), workslop gate before publishing, teachback + spaced review so you can still supervise what you delegated",
+      "category": "productivity",
+      "tags": ["delegation", "workslop", "retrieval-practice", "spaced-repetition", "skill-atrophy"],
+      "strict": true
+    }
+  ]
+}
