@@ -1,10 +1,8 @@
-{
-  "monitors": [
-    {
-      "name": "review-due",
-      "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/monitor-review-due.sh",
-      "description": "bandwidth: notifies Claude when teachback reviews come due mid-session",
-      "when": "always"
-    }
-  ]
-}
+[
+  {
+    "name": "review-due",
+    "command": "\"${CLAUDE_PLUGIN_ROOT}\"/scripts/monitor-review-due.sh",
+    "description": "bandwidth: notifies Claude when teachback reviews come due mid-session",
+    "when": "always"
+  }
+]

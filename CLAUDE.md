@@ -8,6 +8,11 @@
 - No test/lint/build step. The "is it correct?" loop is: edit, install in a
   scratch project (`claude --plugin-dir .`), exercise the skill, inspect
   `.claude/.bandwidth/ledger.jsonl` and `/bandwidth:pulse`.
+- `claude plugin validate` only checks the marketplace manifest — it does
+  NOT validate monitors/hooks schemas. A real `claude plugin install` is
+  the actual load test (`claude plugin list` shows load errors). Known
+  trap: `monitors/monitors.json` is a bare top-level ARRAY, not
+  `{"monitors": [...]}`.
 - Skill auto-invocation depends on the `description` frontmatter in each
   `skills/*/SKILL.md`. `triage` and `tedium` overlap near "should this be
   automated?" — sharpen descriptions rather than merging; triage classifies

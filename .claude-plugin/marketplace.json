@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Keeps AI delegation a bandwidth multiplier instead of a brain drain: delegation triage, workslop gating, teachback + spaced review with out-of-band delivery (Notes.app, notifications, Slack), skill-atrophy tracking.",
-    "version": "0.2.0"
+    "version": "0.2.1"
   },
   "plugins": [
     {

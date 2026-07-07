@@ -1,6 +1,6 @@
 {
   "name": "bandwidth",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Keeps AI delegation a bandwidth multiplier instead of a brain drain. Triage work before handing it off (fully outsource the tedious, keep the craft), gate outgoing workslop before it ships to another human, and retain the ability to supervise what you delegated via teachback + spaced review. Grounded in Bainbridge's ironies of automation (1983) and Carl Hendrick's 'AI brain fry, workslop and the ironies of automation'.",
   "author": {
     "name": "Jon Willis"
